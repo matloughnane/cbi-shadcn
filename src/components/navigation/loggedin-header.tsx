@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 
 export function LoggedInHeader() {
     return <div className="border-b">
-        <div className="flex mx-auto max-w-6xl h-16 items-center px-4">
+        <div className="flex mx-auto h-16 items-center px-4">
             <MainNav className="mx-6" />
             <div className="ml-auto flex items-center space-x-8">
                 <Link href="/">
