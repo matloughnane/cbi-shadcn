@@ -13,11 +13,12 @@ import { Badge } from "../ui/badge";
 import { useRouter } from "next/router";
 
 const navigationItems = [
-  { label: "Overview", 
-    link: "/", 
+  {
+    label: "Overview",
+    link: "/",
     icon: <Home className="h-4 w-4" />,
-    mobileIcon: <Home className="h-6 w-6" /> 
-   },
+    mobileIcon: <Home className="h-6 w-6" />,
+  },
   {
     label: "Sources",
     link: "/integrations",
@@ -48,8 +49,9 @@ export function DesktopNavigation() {
   const router = useRouter();
   return (
     <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-      {navigationItems.map((ni) => (
+      {navigationItems.map((ni, index) => (
         <Link
+          key={index}
           href={`${ni.link}`}
           className={`flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary`}
         >
@@ -75,8 +77,9 @@ export function MobileNavigation() {
         <DatabaseZap className="h-6 w-6" />
         <span className="sr-only">CharityBI</span>
       </Link>
-      {navigationItems.map((ni) => (
+      {navigationItems.map((ni, index) => (
         <Link
+          key={index}
           href={`${ni.link}`}
           className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
         >
